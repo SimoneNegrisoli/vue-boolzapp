@@ -59,3 +59,31 @@ img{
 .myborder{
     border-bottom: 1px  solid var(--color-text-grey);
 }
+main{
+    background-image: url("../img/mine.jpg");
+}
+
+.sent-msg{
+    background-color: var(--color-sent-message);
+    font-weight: lighter;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 2px;
+    width: 25%;
+}
+.sent-position{
+    display: flex;
+    justify-content: flex-end;
+}
+.received-msg{
+    background-color: var(--color-white);
+    font-weight: lighter;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 2px;
+    width: 25%;
+}
+.received-position{
+    display: flex;
+    justify-content: flex-start;
+}

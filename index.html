@@ -79,7 +79,7 @@
                 </div>
 
                 <!-- parte di destra -->
-                <div class="w-75 border">
+                <div class="w-75 border d-flex flex-column">
                     <div class="mytopbar d-flex justify-content-between p-2">
                         <div class="d-flex align-items-center">
                             <div class="img-container">
@@ -95,18 +95,34 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
-                    <main class="p-2">
-                        dove ci sono i messaggi
+                    <main class="p-4 overflow-y-auto flex-grow-1">
+                        <div class="sent-position me-5">
+                            <div class="sent-msg">
+                                Ciao <i class="fa-solid fa-face-smile"></i>
+                            </div>
+                        </div>
+                        <div class="sent-position me-5">
+                            <div class="sent-msg">
+                                Come stai?
+                            </div>
+                        </div>
+                       
+                        <div class="received-positions ms-5">
+                            <div class="received-msg ">
+                                Bene grazie 
+                            </div>
+                        </div>
+                        
                     </main>
-                    <div class="p-2 d-flex align-content-center justify-content-between">
+                    <div class="p-2 d-flex align-items-center justify-content-between">
                         <div>
-                            emoticon
+                            <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div class="w-75">
-                            <input type="text" class="w-100">
+                            <input type="text" class="w-100 p-2" placeholder="Scrivi un messagio">
                         </div>
                         <div>
-                            microfono <!-- farci un bonus  -->
+                            <i class="fa-solid fa-microphone"></i> <!-- farci un bonus  -->
                         </div>
                     </div>
                 </div>
