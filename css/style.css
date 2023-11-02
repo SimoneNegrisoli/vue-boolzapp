@@ -1,8 +1,22 @@
-:root{
-
+:root {
+	--color-white: #ffffff;
+	--color-dark-text: #161012;
+	--color-dark-grey: #6b7376;
+	--color-text-grey: #b6bbc1;
+	--color-headers: #eaeaea;
+	--color-contact-active: #e9ebeb;
+	--color-light-icons: #b1b1b1;
+	--color-sent-message: #d5f9ba;
+	--color-notification: #8edafc;
+}
+*{
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
 }
 body{
-
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(180deg, #009688 10.94%, #DBDBD3 10.95%);
+    font-family: 'Lato', sans-serif;
 }
 
 #app{
