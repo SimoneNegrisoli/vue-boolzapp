@@ -56,3 +56,6 @@ img{
     height: 50px;
     border-radius: 50%;
 }
+.myborder{
+    border-bottom: 1px  solid var(--color-text-grey);
+}
