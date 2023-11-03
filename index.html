@@ -57,8 +57,7 @@
                     <!-- input search -->
                     <div class="input-group p-1">
                         <div class="input-group-text"><i class="fa-solid fa-magnifying-glass myicon"></i></div>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
-                            v-model="searchText">
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="searchText" @keyup="searchContacts">
                     </div>
                     <!-- contatti -->
                     <div class=" overflow-y-auto flex-grow-1">

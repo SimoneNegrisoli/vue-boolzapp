@@ -9,7 +9,8 @@ createApp({
             activeContactIndex: 0,
             searchText: '',
             message: '',
-            newMessage: ''
+            newMessage: '',
+            filteredContacts: []
         }
     },
     methods :{
@@ -60,6 +61,14 @@ createApp({
 
     },
     computed : {
-       
+       searchContacts(){
+            if(this.searchText === ''){
+                this.searchContacts = this.contacts
+            }else{
+                this.filteredContacts = this.contacts.filter( el =>
+                    el.name.toLowerCase().includes(this.searchText.toLowerCase())
+                )
+            }
+       }
     }
 }).mount('#app')
