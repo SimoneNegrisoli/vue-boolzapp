@@ -8,7 +8,8 @@ createApp({
             contacts: contactsList,
             activeContactIndex: 0,
             searchText: '',
-            message: ''
+            message: '',
+            newMessage: ''
         }
     },
     methods :{
@@ -36,11 +37,29 @@ createApp({
             }else {
                 return 'Unknow';
             }
+        },
+        sendNewMessage(){
+            const contact = this.contacts[this.activeContactIndex];
+
+            contact.messages.push({
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+                message: this.newMessage,
+                status: 'sent'
+            });
+
+            setTimeout(()=>{
+                contact.messages.push({
+                    date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+                    message: 'ok',
+                    status: 'received'
+                })  
+            },1000);
+
+            this.newMessage = ''
         }
+
     },
     computed : {
-        // activeContact(){
-        //     return this.contacts(this.activeContactIndex);
-        // }
+       
     }
 }).mount('#app')
