@@ -18,25 +18,25 @@ createApp({
                 this.activeContactIndex = index;
             }
         },
-        // getLastMessage(id){
-        //     const contact = this.contacts.find((contact)=> contact.id === id)
-        //     const len = contact.messages.lenght;
-        //     if(len > 0){
-        //         return contact.messages[len - 1].message; 
-        //     }else {
-        //         return 'Non ci sono messaggi';
-        //     }
-        // },
+        getLastMessage(id){
+            const contact = this.contacts.find((contact)=> contact.id === id)
+            const len = contact.messages.length;
+            if(len > 0){
+                return contact.messages[len - 1].message; 
+            }else {
+                return 'Non ci sono messaggi';
+            }
+        },
 
-        // getLastAccess(id){
-        //     const contact = this.contacts.find((contact)=> contact.id === id)
-        //     const len = contact.messages.lenght;
-        //     if(len > 0){
-        //         return contact.messages[len - 1].data; 
-        //     }else {
-        //         return 'Unknow';
-        //     }
-        // }
+        getLastAccess(id){
+            const contact = this.contacts.find((contact)=> contact.id === id)
+            const len = contact.messages.length;
+            if(len > 0){
+                return contact.messages[len - 1].date; 
+            }else {
+                return 'Unknow';
+            }
+        }
     },
     computed : {
         // activeContact(){
