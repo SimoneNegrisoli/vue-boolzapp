@@ -56,28 +56,36 @@ img{
     height: 50px;
     border-radius: 50%;
 }
+.my-icon i{
+    width: 100%;
+}
 .myborder{
-    border-bottom: 1px  solid var(--color-text-grey);
+    border-bottom: 1px  solid rgba(128, 128, 128, 0.105);
+}
+.myborder:hover{
+    background-color: var(--color-contact-active);
+    cursor: pointer;
 }
 main{
     background-image: url("../img/mine.jpg");
 }
 
+/* messaggi inviati */
 .sent-msg{
     background-color: var(--color-sent-message);
-    font-weight: lighter;
     padding: 10px;
     border-radius: 10px;
     margin: 2px;
     width: 25%;
 }
+
 .sent-position{
     display: flex;
     justify-content: flex-end;
 }
+/* messaggi ricevuti */
 .received-msg{
     background-color: var(--color-white);
-    font-weight: lighter;
     padding: 10px;
     border-radius: 10px;
     margin: 2px;
@@ -86,4 +94,14 @@ main{
 .received-position{
     display: flex;
     justify-content: flex-start;
+}
+/* barra invio messaggi */
+.send-message{
+    width: 90%;
+}
+.bottom-icon{
+    margin: 0 auto;
+}
+.bottom-bar{
+    background-color: #F3EEEA;
 }
