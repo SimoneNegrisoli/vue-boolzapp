@@ -10,7 +10,6 @@ createApp({
             searchText: '',
             message: '',
             newMessage: '',
-            filteredContacts: []
         }
     },
     methods :{
@@ -61,13 +60,13 @@ createApp({
 
     },
     computed : {
-       searchContacts(){
+        filteredContacts(){
             if(this.searchText === ''){
-                this.searchContacts = this.contacts
+                return this.contacts
             }else{
-                this.filteredContacts = this.contacts.filter( el =>
-                    el.name.toLowerCase().includes(this.searchText.toLowerCase())
-                )
+               return this.contacts.filter((el)=>
+                el.name.toLowerCase().includes(this.searchText.toLowerCase())
+               )
             }
        }
     }
