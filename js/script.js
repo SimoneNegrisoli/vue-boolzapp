@@ -41,14 +41,13 @@ createApp({
         },
         sendNewMessage(){
             const contact = this.contacts[this.activeContactIndex];
-
+            if(this.newMessage === ''){
+                return
+            }
             contact.messages.push({
                 date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
                 message: this.newMessage,
                 status: 'sent'
-            });
-            this.$nextTick(()=>{
-                this.$refs.messages[this.$refs.messages.length -1].scrollIntoView({behavior: 'smooth'})
             });
 
             setTimeout(()=>{
@@ -58,6 +57,10 @@ createApp({
                     status: 'received'
                 })  
             },1000);
+            
+            this.$nextTick(()=>{
+                this.$refs.messages[this.$refs.messages.length -1].scrollIntoView({behavior: 'smooth'})
+            });
 
             this.newMessage = ''
         },
@@ -86,13 +89,8 @@ createApp({
                )
             }
        }
-    },
-    
-    mounted() {
-        this.$nextTick(() => {
-            this.$refs.messages[this.$refs.messages.length - 1].scrollIntoView({ behavior: 'smooth' });
-        })
     }
+    
 
 
 }).mount('#app')
