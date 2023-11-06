@@ -11,6 +11,7 @@ createApp({
             message: '',
             newMessage: '',
             selectedMessage : null,
+            showChat: false
         }
     },
     methods :{
@@ -19,6 +20,7 @@ createApp({
             if(index !== -1){
                 this.activeContactIndex = index;
             }
+            this.showChat = true;
         },
         getLastMessage(id){
             const contact = this.contacts.find((contact)=> contact.id === id)
