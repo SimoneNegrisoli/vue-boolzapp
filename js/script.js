@@ -54,6 +54,7 @@ createApp({
             }
         },
         sendNewMessage(){
+
             const contact = this.contacts[this.activeContactIndex];
             if(this.newMessage === ''){
                 return
@@ -77,10 +78,13 @@ createApp({
                 }) 
                 this.scrollMsg()
 
-            },1000);
-            
+            },1000)
+
+           
+
             this.newMessage = ''
         },
+        
         scrollMsg(){
             this.$nextTick(()=>{
                 this.$refs.messages[this.$refs.messages.length -1].scrollIntoView({behavior: 'smooth'})

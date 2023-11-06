@@ -50,7 +50,9 @@ img{
 }
 .mydarkgrey{
     color: var(--color-dark-grey);
+    font-size: 0.8rem;
 }
+
 .my-icon{
     width: 50px;
     height: 50px;
@@ -112,5 +114,9 @@ main{
 .fa-paper-plane:hover{
     color: #34B7F1;
     transform: scale(1.1);
+    cursor: pointer;
+}
+.fa-trash-can:hover{
+    color: red;
     cursor: pointer;
 }
