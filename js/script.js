@@ -10,6 +10,7 @@ createApp({
             searchText: '',
             message: '',
             newMessage: '',
+            selectedMessage : null,
         }
     },
     methods :{
@@ -56,7 +57,20 @@ createApp({
             },1000);
 
             this.newMessage = ''
-        }
+        },
+        selectMsg(index){
+            if(this.selectedMessage !== index){
+                this.selectedMessage = index;
+            } else{
+                this.selectedMessage = null;
+            }
+            
+        },
+        deleteMsg(){
+            const contact = this.contacts[this.activeContactIndex];
+            contact.messages.splice(this.selectedMessage, 1);
+            this.selectedMessage = null;
+        },
 
     },
     computed : {

@@ -107,3 +107,6 @@ main{
     color: var(--color-text-grey);
     font-size: 0.8rem;
 }
+.myshow{
+    display: none;
+}
