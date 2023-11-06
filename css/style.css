@@ -108,3 +108,9 @@ main{
     color: var(--color-text-grey);
     font-size: 0.8rem;
 }
+
+.fa-paper-plane:hover{
+    color: #34B7F1;
+    transform: scale(1.1);
+    cursor: pointer;
+}
