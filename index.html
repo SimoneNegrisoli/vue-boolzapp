@@ -23,9 +23,10 @@
         <div class="container h-100 ">
             <div class="d-flex h-100 border">
                 <!-- parte di sinistra -->
-
-                <!-- topbar -->
+                
                 <div class="w-25 d-flex flex-column flex-nowrap bg-white h-100 ">
+
+                    <!-- topbar -->
                     <div class="mytopbar d-flex justify-content-between  p-2">
                         <div class="d-flex align-items-center">
                             <div class="img-container">
@@ -110,7 +111,7 @@
                     </div>
                     <!-- Main  -->
                     <main class="p-4 overflow-y-auto flex-grow-1">
-                        <div :class="{'sent-position':item.status === 'sent', 'received-position': item.status === 'received', 'ms-5':item.status === 'sent', 'me-5': item.status === 'received'}" v-for="(item,index) in contacts[activeContactIndex].messages" :key="index">
+                        <div :class="{'sent-position':item.status === 'sent', 'received-position': item.status === 'received', 'ms-5':item.status === 'sent', 'me-5': item.status === 'received'}" v-for="(item,index) in contacts[activeContactIndex].messages" :key="index" ref="messages">
                             <div :class="item.status + '-msg'" @click="selectMsg(index)" >
                                 {{item.message}}
                                 <div class="dropdown-menu" :class="{'show': selectedMessage === index}">

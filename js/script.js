@@ -47,6 +47,9 @@ createApp({
                 message: this.newMessage,
                 status: 'sent'
             });
+            this.$nextTick(()=>{
+                this.$refs.messages[this.$refs.messages.length -1].scrollIntoView({behavior: 'smooth'})
+            });
 
             setTimeout(()=>{
                 contact.messages.push({
@@ -83,5 +86,13 @@ createApp({
                )
             }
        }
+    },
+    
+    mounted() {
+        this.$nextTick(() => {
+            this.$refs.messages[this.$refs.messages.length - 1].scrollIntoView({ behavior: 'smooth' });
+        })
     }
+
+
 }).mount('#app')
