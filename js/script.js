@@ -11,7 +11,19 @@ createApp({
             message: '',
             newMessage: '',
             selectedMessage : null,
-            showChat: false
+            showChat: false,
+            phrases: [
+                "Va bene!",
+                "Ok, capito!",
+                "Perfetto!",
+                "Sì, esattamente!",
+                "D'accordo!",
+                "Va bene, grazie!",
+                "Comprendo!",
+                "Certamente!",
+                "Eccellente!",
+                "Bene!"
+            ]
         }
     },
     methods :{
@@ -46,6 +58,10 @@ createApp({
             if(this.newMessage === ''){
                 return
             }
+
+            const randomInt = Math.floor(Math.random() * this.phrases.length);
+            const rispostaRandom = this.phrases[randomInt];
+
             contact.messages.push({
                 date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
                 message: this.newMessage,
@@ -56,7 +72,7 @@ createApp({
             setTimeout(()=>{
                 contact.messages.push({
                     date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
-                    message: 'ok',
+                    message: rispostaRandom,
                     status: 'received'
                 }) 
                 this.scrollMsg()
