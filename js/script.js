@@ -49,20 +49,24 @@ createApp({
                 message: this.newMessage,
                 status: 'sent'
             });
-
+            this.scrollMsg()
+            
             setTimeout(()=>{
                 contact.messages.push({
                     date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
                     message: 'ok',
                     status: 'received'
-                })  
+                }) 
+                this.scrollMsg()
+
             },1000);
             
+            this.newMessage = ''
+        },
+        scrollMsg(){
             this.$nextTick(()=>{
                 this.$refs.messages[this.$refs.messages.length -1].scrollIntoView({behavior: 'smooth'})
             });
-
-            this.newMessage = ''
         },
         selectMsg(index){
             if(this.selectedMessage !== index){
